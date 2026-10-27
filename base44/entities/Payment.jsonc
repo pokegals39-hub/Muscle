@@ -1,0 +1,67 @@
+{
+  "name": "Payment",
+  "type": "object",
+  "properties": {
+    "member_id": {
+      "type": "string",
+      "description": "Identificativo dell'iscritto"
+    },
+    "member_name": {
+      "type": "string",
+      "description": "Nome dell'iscritto"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Importo incassato in euro"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Data dell'incasso"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "Carta",
+        "Contanti",
+        "Bonifico",
+        "POS"
+      ],
+      "description": "Metodo di pagamento"
+    },
+    "plan": {
+      "type": "string",
+      "description": "Abbonamento acquistato"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Note"
+    }
+  },
+  "required": [
+    "amount",
+    "date"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

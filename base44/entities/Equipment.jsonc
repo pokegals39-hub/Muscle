@@ -1,0 +1,74 @@
+{
+  "name": "Equipment",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome dell'attrezzatura"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Pesi liberi",
+        "Macchine",
+        "Cardio",
+        "Functional",
+        "Accessori"
+      ],
+      "description": "Categoria"
+    },
+    "room": {
+      "type": "string",
+      "description": "Sala in cui si trova"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Disponibile",
+        "In uso",
+        "Manutenzione"
+      ],
+      "default": "Disponibile",
+      "description": "Stato operativo"
+    },
+    "quantity": {
+      "type": "number",
+      "description": "Quantit\u00e0 disponibile"
+    },
+    "last_maintenance": {
+      "type": "string",
+      "format": "date",
+      "description": "Ultima manutenzione"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Note"
+    }
+  },
+  "required": [
+    "name",
+    "category"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

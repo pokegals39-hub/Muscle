@@ -1,0 +1,93 @@
+{
+  "name": "GymClass",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome del corso"
+    },
+    "discipline": {
+      "type": "string",
+      "enum": [
+        "Sala Pesi",
+        "CrossFit",
+        "Functional",
+        "HIIT",
+        "Spinning",
+        "Yoga",
+        "Boxe",
+        "Pilates"
+      ],
+      "description": "Disciplina"
+    },
+    "trainer": {
+      "type": "string",
+      "description": "Trainer che tiene il corso"
+    },
+    "day": {
+      "type": "string",
+      "enum": [
+        "lun",
+        "mar",
+        "mer",
+        "gio",
+        "ven",
+        "sab",
+        "dom"
+      ],
+      "description": "Giorno della settimana"
+    },
+    "start_time": {
+      "type": "string",
+      "description": "Orario di inizio (HH:MM)"
+    },
+    "duration": {
+      "type": "number",
+      "description": "Durata in minuti"
+    },
+    "capacity": {
+      "type": "number",
+      "description": "Posti disponibili"
+    },
+    "room": {
+      "type": "string",
+      "description": "Sala"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "Base",
+        "Intermedio",
+        "Avanzato"
+      ],
+      "description": "Livello"
+    }
+  },
+  "required": [
+    "name",
+    "day",
+    "start_time"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

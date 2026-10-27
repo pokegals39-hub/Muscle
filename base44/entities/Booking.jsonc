@@ -1,0 +1,64 @@
+{
+  "name": "Booking",
+  "type": "object",
+  "properties": {
+    "class_id": {
+      "type": "string",
+      "description": "Identificativo del corso"
+    },
+    "class_name": {
+      "type": "string",
+      "description": "Nome del corso"
+    },
+    "member_id": {
+      "type": "string",
+      "description": "Identificativo dell'iscritto"
+    },
+    "member_name": {
+      "type": "string",
+      "description": "Nome dell'iscritto"
+    },
+    "class_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Data della lezione prenotata"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Confermato",
+        "In attesa",
+        "Cancellato"
+      ],
+      "default": "Confermato",
+      "description": "Stato della prenotazione"
+    }
+  },
+  "required": [
+    "class_id",
+    "member_name",
+    "class_date"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

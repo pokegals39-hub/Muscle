@@ -1,0 +1,49 @@
+{
+  "name": "CheckIn",
+  "type": "object",
+  "properties": {
+    "member_id": {
+      "type": "string",
+      "description": "Identificativo dell'iscritto"
+    },
+    "member_name": {
+      "type": "string",
+      "description": "Nome dell'iscritto"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data e ora dell'ingresso"
+    },
+    "note": {
+      "type": "string",
+      "description": "Note"
+    }
+  },
+  "required": [
+    "member_name",
+    "timestamp"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

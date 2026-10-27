@@ -1,0 +1,53 @@
+{
+  "name": "Trainer",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome del trainer"
+    },
+    "specialty": {
+      "type": "string",
+      "description": "Specializzazione"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Disponibile",
+        "In lezione",
+        "Off"
+      ],
+      "default": "Disponibile",
+      "description": "Disponibilit\u00e0 attuale"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Telefono"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
