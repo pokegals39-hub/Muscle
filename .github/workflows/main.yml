@@ -27,9 +27,6 @@ jobs:
       - run: npm install --legacy-peer-deps
 
       - run: npm run build
-        env:
-          VITE_BASE44_APP_ID: 6ae0c1fbbb3001621317963f
-          VITE_BASE44_BACKEND_URL: https://base44.app
 
       - uses: actions/configure-pages@v5
 
